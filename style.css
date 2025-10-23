@@ -312,7 +312,7 @@ main {
 /* ===== ABOUT PAGE ===== */
 .about-header {
     height: 70vh;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url('../img/about-bg.jpg') center/cover no-repeat;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url('img/about-bg.jpg') center/cover no-repeat;
 }
 
 .about {
