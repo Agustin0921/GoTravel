@@ -1,0 +1,527 @@
+/* --- COMANDO PARA RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* === NAVBAR === */
+
+.header {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(img/hero-gotravel.jpg);
+}
+
+.navbar {
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.logo span {
+    color: #00bcd4;
+}
+
+/* --- NAV LINKS --- */
+
+.nav_links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav_links a {
+    position: relative;
+    padding: 7px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.nav_links a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #00bceb;
+    transition: width 0.3s ease;
+}
+
+
+.nav_links a:hover::after{
+    width: 100%;
+}
+
+/* ==== NAVBAR FIJA CON FONDO === */
+.navbar.scrolled {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85); /* fondo oscuro semitransparente */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* ==== HERO SECTION ==== */
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.hero-content h1{
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-content span {
+    color: #00bcd4;
+    font-weight: bold;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #00bcd4;
+    color: #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #0097a7;
+}
+
+
+
+/* ==== MENU MOVIL ==== */
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background: #fff;
+    margin: 4px 0;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* ==== ANIMACIÓN BOTÓN HAMBURGUESA ==== */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.menu-toggle span {
+    transition: all 0.3s ease;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .nav_links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 60%;
+        background: rgba(0,0,0,0.9);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        transition: right 0.4s ease;
+    }
+
+    .nav_links.open {
+        right: 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+/* ===== MAIN ===== */
+main {
+    padding: 60px 10%;
+    background-color: #fff;
+}
+
+/* ===== DESTINOS ===== */
+.destinos {
+    text-align: center;
+    margin-bottom: 80px;
+}
+.destinos h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #4e4e4e;
+}
+.destinos p {
+    color: #555;
+    margin-bottom: 40px;
+}
+.destinos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.card {
+    background: #f7f7f7;
+    box-shadow: 0px 0px 12px #0005;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.card h3 {
+    margin: 15px 0 5px;
+}
+.card p {
+    color: #666;
+    padding: 0 15px 20px;
+}
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* ===== SERVICIOS ===== */
+.servicios {
+    background-color: #f9f9f9;
+    padding: 80px 10%;
+    text-align: center;
+}
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.servicio {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+.servicio:hover {
+    transform: translateY(-8px);
+}
+.servicio i {
+    font-size: 2rem;
+    color: #00bcd4;
+    margin-bottom: 15px;
+}
+
+/* ===== TESTIMONIOS ===== */
+.testimonios {
+    text-align: center;
+    margin: 100px 0;
+}
+.testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+.testimonio {
+    background: #f7f7f7;
+    border-radius: 15px;
+    padding: 30px;
+    font-style: italic;
+}
+.testimonio h4 {
+    margin-top: 15px;
+    color: #00bcd4;
+    font-style: normal;
+}
+
+/* ===== CTA ===== */
+.cta {
+    background: linear-gradient(to right, #00bcd4, #0097a7);
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+    border-radius: 20px;
+    margin-top: 80px;
+}
+.cta h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+.cta p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+
+/* ===== ABOUT PAGE ===== */
+.about-header {
+    height: 70vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url('../img/about-bg.jpg') center/cover no-repeat;
+}
+
+.about {
+    padding: 80px 10%;
+}
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+    .about-text {
+    flex: 1;
+}
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+.about-text p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.about-img {
+    flex: 1;
+    text-align: center;
+}
+.about-img img {
+    width: 100%;
+    border-radius: 15px;
+    max-width: 500px;
+}
+
+/* ===== VALORES ===== */
+.valores {
+    text-align: center;
+    background-color: #f7f7f7;
+    padding: 80px 10%;
+}
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+.valor {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+.valor i {
+    font-size: 2rem;
+    color: #00bcd4;
+    margin-bottom: 15px;
+}
+.valor:hover {
+    transform: translateY(-8px);
+}
+
+/* ===== MISION, VISION Y OBJETIVOS ===== */
+.mision {
+    background-color: #f9f9f9;
+    text-align: center;
+    padding: 80px 10%;
+}
+.mision h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+.mision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.mision .card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+.mision .card:hover {
+    transform: translateY(-8px);
+}
+.mision .card i {
+    font-size: 2rem;
+    color: #00bcd4;
+    margin-bottom: 10px;
+}
+
+/* ===== CONTADOR ===== */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #00bcd4;
+    color: #fff;
+    padding: 60px 10%;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.stat {
+    margin: 20px;
+}
+.stat h3 {
+    font-size: 2.5rem;
+}
+.stat p {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* ===== PARTNERS ===== */
+.partners {
+    text-align: center;
+    padding: 80px 10%;
+    background: #f7f7f7;
+}
+.partners h2 {
+    margin-bottom: 40px;
+}
+.partners .logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    overflow: hidden;
+    animation: scroll-logos 20s linear infinite;
+}
+.partners .logos img {
+    height: 60px;
+    filter: grayscale(100%);
+    opacity: 0.8;
+    transition: all 0.3s;
+}   
+.partners .logos img:hover {
+    filter: grayscale(0);
+    opacity: 1;
+}
+@keyframes scroll-logos {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* ===== RESPONSABILIDAD SOCIAL ===== */
+.sostenibilidad {
+    padding: 80px 10%;
+    background: linear-gradient(to right, #00bcd4, #0097a7);
+    color: #fff;
+    text-align: center;
+}
+.sostenibilidad h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+.sostenibilidad ul {
+    list-style: none;
+    margin-top: 20px;
+}
+.sostenibilidad li {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+
+/* ===== EQUIPO ===== */
+.equipo {
+    padding: 80px 10%;
+    text-align: center;
+}
+.equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+.miembro {
+    box-shadow: 0px 0px 12px #0005;
+    border-radius: 15px;
+}
+
+.miembro img {
+    width: 80%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    height: 220px;
+    object-fit: cover;
+    object-position: center top;
+}
+    .miembro h4 {
+    font-weight: 600;
+}
+.miembro p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: #1c1c1c;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
