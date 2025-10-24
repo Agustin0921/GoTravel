@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Destinos | GoTravel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a2e8f5a1f9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- ===== NAVBAR ===== -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Go<span>Travel</span></div>
+            <ul class="nav_links" id="nav_link">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html" class="active">Sobre Nosotros</a></li>
+                <li><a href="destinations.html">Destinos</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+        <section class="hero hero-destinos">
+            <div class="hero-content">
+                <h1>Explorá el mundo con <span>GoTravel</span></h1>
+                <p>Elegí tus fechas, compará precios y descubrí todos los detalles de cada destino.</p>
+                <a href="#destinos" class="btn">Comenzar</a>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <!-- ===== FILTROS ===== -->
+        <section class="filtros">
+            <h2>Filtrar destinos</h2>
+            <div class="filtros-contenedor">
+                <select name="" id="filtro-region">
+                    <option value="all">Todas las regiones</option>
+                    <option value="europa">Europa</option>
+                    <option value="asia">Asia</option>
+                    <option value="america">América</option>
+                    <option value="oceanía">Oceanía</option>
+                </select>
+
+                <select name="" id="filtro-tipo">
+                    <option value="all">Todos los tipos</option>
+                    <option value="relax">Relax</option>
+                    <option value="aventura">Aventura</option>
+                    <option value="cultural">Cultural</option>
+                    <option value="romantico">Romántico</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- ===== DESTINOS ===== -->
+        <section class="destinos" id="destinos">
+            <h2>Destinos Populares</h2>
+            <p>Seleccioná un destino para conocer más detalles o calcular tu viaje.</p>
+
+            <div class="destinos-grid">
+
+                <!-- París -->
+                <div class="card destino-avanzado" data-region="europa" data-tipo="romantico" data-base="1250">
+                    <img src="img/paris.jpg" alt="París" class="img-destino" data-id="paris">
+                    <div class="card-content">
+                        <h3>París, Francia</h3>
+                        <p>La ciudad del amor, perfecta para escapadas románticas y arte.</p>
+                        <p class="precio">Base: <span>$1250</span> USD</p>
+
+                        <form class="form-viaje">
+                            <div class="fechas">
+                                <div>
+                                    <label>Ida:</label>
+                                    <input type="date" required>
+                                </div>
+                                <div>
+                                    <label>Vuelta:</label>
+                                    <input type="date" required>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-calcular">Calcular precio</button>
+                            <p class="total"></p>
+                        </form>
+
+                        <button class="btn-itinerario">Agregar al itinerario</button>
+
+                        <div class="reseñas">
+                            <p>⭐⭐⭐⭐☆ (4.5 / 5)</p>
+                            <small>Basado en 320 opiniones</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maldivas -->
+                <div class="card destino-avanzado" data-region="asia" data-tipo="relax" data-base="980">
+                    <img src="img/maldivas.jpg" alt="Maldivas" class="img-destino" data-id="maldivas">
+                    <div class="card-content">
+                        <h3>Islas Maldivas</h3>
+                        <p>Playas cristalinas y resorts sobre el mar para descansar sin límites.</p>
+                        <p class="precio">Base: <span>$980</span> USD</p>
+
+                        <form class="form-viaje">
+                            <div class="fechas">
+                                <div>
+                                    <label>Ida:</label>
+                                    <input type="date" required>
+                                </div>
+                                <div>
+                                    <label>Vuelta:</label>
+                                    <input type="date" required>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn-calcular">Calcular precio</button>
+                            <p class="total"></p>
+                        </form>
+
+                        <button class="btn-itinerario">Agregar al itinerario</button>
+
+                        <div class="reseñas">
+                            <p>⭐⭐⭐⭐⭐ (4.9 / 5)</p>
+                            <small>Basado en 512 opiniones</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nueva York -->
+                <div class="card destino-avanzado" data-region="america" data-tipo="cultural" data-base="1050">
+                    <img src="img/newyork.jpg" alt="Nueva York" class="img-destino" data-id="ny">
+                    <div class="card-content">
+                        <h3>Nueva York, EE.UU.</h3>
+                        <p class="precio">Base: <span>$1050</span> USD</p>
+
+                        <form class="form-viaje">
+                            <div class="fechas">
+                                <div>
+                                    <label>Ida:</label>
+                                    <input type="date" required>
+                                </div>
+                                <div>
+                                    <label>Vuelta:</label>
+                                    <input type="date" required>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-calcular">Calcular precio</button>
+                            <p class="total"></p>
+                        </form>
+
+                        <button class="btn-itinerario">Agregar al itinerario</button>
+
+                        <div class="reseñas">
+                            <p>⭐⭐⭐⭐☆ (4.6 / 5)</p>
+                            <small>Basado en 410 opiniones</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA ===== -->
+        <section class="cta">
+            <h2>¿Listos para viajar?</h2>
+            <p>Planificamos tu experiencia completa: vuelos, hoteles y actividades.</p>
+            <a href="contact.html" class="btn">Contactar un asesor</a>
+        </section>
+    </main>
+
+    <!-- ===== MODAL GALERÍA ===== -->
+    <div id="modalDestino" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar">&times;</span>
+            <h2 id="modalTitulo"></h2>
+            <div class="galeria" id="galeria"></div>
+            <p id="modalDescripcion"></p>
+            <a href="contact.html" class="btn">Reservar ahora</a>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <p>© 2025 GoTravel - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

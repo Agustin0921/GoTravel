@@ -209,23 +209,24 @@ main {
 }
 .destinos p {
     color: #555;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 .destinos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
 }
 .card {
     background: #f7f7f7;
     box-shadow: 0px 0px 12px #0005;
     border-radius: 15px;
+    box-shadow: 0 0 8px #0003;
     overflow: hidden;
     transition: transform 0.3s;
 }
 .card img {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
 }
 .card h3 {
@@ -525,3 +526,166 @@ main {
     padding: 20px;
     font-size: 0.9rem;
 }
+
+
+
+/* ==== MODAL ==== */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contenido {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    position: relative;
+    animation: aparecer 0.4s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.galeria {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.galeria img {
+    width: 30%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* ===== ESTILOS DE FILTROS Y FORMULARIOS DE VIAJE ===== */
+
+.filtros {
+    text-align: center;
+    margin: 60px auto;
+}
+
+.filtros h2 {
+    color: #0097a7;
+    margin-bottom: 15px;
+}
+
+.filtros-contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.filtros select {
+    padding: 10px 15px;
+    border: 2px solid #00bcd4;
+    border-radius: 10px;
+    background: #f9f9f9;
+    color: #333;
+    font-size: 1rem;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.filtros select:hover {
+    background: #00bcd4;
+    color: #fff;
+}
+
+/* ==== FORMULARIO DE FECHAS (DISEÑO AJUSTADO) ==== */
+.form-viaje {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 15px 0;
+  align-items: center; /* centra todo dentro de la card */
+}
+
+.form-viaje label {
+  font-weight: bold;
+  color: #00bcd4;
+  text-align: left;
+  width: 80px; /* ancho fijo para que no se deformen */
+}
+
+.fechas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.fechas input[type="date"] {
+  padding: 8px;
+  width: 150px; /* tamaño más compacto */
+  border: 2px solid #00bcd4;
+  border-radius: 8px;
+  background-color: #fdfdfd;
+  transition: all 0.3s;
+}
+
+.fechas input[type="date"]:focus {
+  outline: none;
+  border-color: #0097a7;
+  background-color: #e6f9fb;
+}
+
+
+.btn-calcular, .btn-itinerario {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #00bcd4;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-calcular:hover, .btn-itinerario:hover {
+  background: #0097a7;
+}
+
+.total {
+  margin-top: 8px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
