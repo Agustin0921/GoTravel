@@ -247,6 +247,8 @@ main {
     }
 }
 
+
+
 .card {
     background: #f7f7f7;
     box-shadow: 0 0 10px rgba(0,0,0,0.15);
@@ -275,6 +277,55 @@ main {
 .card:hover {
     transform: translateY(-10px);
 }
+
+.destinos-grid-inicio {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* ✅ 3 columnas fijas */
+    gap: 30px;
+    justify-items: center;
+}
+
+@media (max-width: 992px) {
+    .destinos-grid-inicio {
+        grid-template-columns: repeat(2, 1fr); /* en pantallas medianas */
+    }
+}
+
+@media (max-width: 600px) {
+    .destinos-grid-inicio {
+        grid-template-columns: 1fr; /* en pantallas chicas */
+    }
+}
+
+.card-inicio {
+    background: #f7f7f7;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    width: 100%;             /* ✅ más chica dentro de su columna */
+    max-width: 1200px;       /* ✅ tamaño máximo controlado */
+}
+
+.card-inicio img {
+    width: 100%;
+    height: 650px;          /* ✅ más baja */
+    object-fit: cover;
+}
+
+.card-inicio h3 {
+    font-size: 2.1rem;
+}
+
+.card-inicio p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
 
 /* ===== SERVICIOS ===== */
 .servicios {
