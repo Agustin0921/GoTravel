@@ -11,12 +11,12 @@
 </head>
 <body>
     <!-- ===== NAVBAR ===== -->
-    <header class="header">
+    <header class="header destino-header">
         <nav class="navbar">
             <div class="logo">Go<span>Travel</span></div>
             <ul class="nav_links" id="nav_link">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="about.html" class="active">Sobre Nosotros</a></li>
+                <li><a href="about.html">Sobre Nosotros</a></li>
                 <li><a href="destinations.html">Destinos</a></li>
                 <li><a href="contact.html">Contacto</a></li>
             </ul>
@@ -37,35 +37,53 @@
     </header>
 
     <main>
-        <!-- ===== FILTROS ===== -->
-        <section class="filtros">
-            <h2>Filtrar destinos</h2>
-            <div class="filtros-contenedor">
-                <select name="" id="filtro-region">
-                    <option value="all">Todas las regiones</option>
-                    <option value="europa">Europa</option>
-                    <option value="asia">Asia</option>
-                    <option value="america">América</option>
-                    <option value="oceanía">Oceanía</option>
-                </select>
+        <!-- ===== FILTROS Y DESTINOS ===== -->
+    <section class="filtros-regiones">
+        <nav class="region-nav">
+            <ul>
+                <li class="active" data-region="all">Todos</li>
+                <li data-region="europa">Europa</li>
+                <li data-region="asia">Asia</li>
+                <li data-region="america">América</li>
+                <li data-region="africa">África</li>
+                <li data-region="oceania">Oceanía</li>
+            </ul>
+        </nav>
+    </section>
 
-                <select name="" id="filtro-tipo">
-                    <option value="all">Todos los tipos</option>
+    <div class="destinos-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <h3>Explorá el mundo</h3>
+                <ul id="lista-lugares">
+                    <li><a href="#">París, Francia</a></li>
+                    <li><a href="#">Roma, Italia</a></li>
+                    <li><a href="#">Londres, Reino Unido</a></li>
+                </ul>
+
+            <div class="filtros-laterales">
+                <h4>Filtrar por:</h4>
+                <label>Tipo de viaje:</label>
+                <select id="filtro-tipo">
+                    <option value="all">Todos</option>
                     <option value="relax">Relax</option>
                     <option value="aventura">Aventura</option>
                     <option value="cultural">Cultural</option>
                     <option value="romantico">Romántico</option>
                 </select>
+            
+                <label>Precio máximo:</label>
+                <input type="range" id="filtro-precio" min="500" max="3000" step="100" value="3000">
+                <p>Hasta <span id="valor-precio">$3000</span> USD</p>
             </div>
-        </section>
+        </aside>
 
-        <!-- ===== DESTINOS ===== -->
+        <!-- Contenido principal -->
         <section class="destinos" id="destinos">
             <h2>Destinos Populares</h2>
             <p>Seleccioná un destino para conocer más detalles o calcular tu viaje.</p>
 
             <div class="destinos-grid">
-
                 <!-- París -->
                 <div class="card destino-avanzado" data-region="europa" data-tipo="romantico" data-base="1250">
                     <img src="img/paris.jpg" alt="París" class="img-destino" data-id="paris">
@@ -163,6 +181,8 @@
                 </div>
             </div>
         </section>
+    </div>
+
 
         <!-- ===== CTA ===== -->
         <section class="cta">
@@ -185,7 +205,15 @@
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <p>© 2025 GoTravel - Todos los derechos reservados</p>
+        <div class="footer-content">
+            <p>© 2025 GoTravel - Todos los derechos reservados</p>
+            <div class="footer-redes">
+                <a href="#" class="social"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="social"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>

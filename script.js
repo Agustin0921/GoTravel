@@ -173,3 +173,111 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+
+// === Marcar automáticamente el link activo ===
+const currentPage = window.location.pathname.split("/").pop();
+document.querySelectorAll(".nav_links a").forEach(link => {
+  if (link.getAttribute("href") === currentPage) {
+    link.classList.add("active");
+  }
+});
+
+// === Mostrar pantalla de mantenimiento si algo falla ===
+window.addEventListener("error", (e) => {
+  console.warn("Error detectado, mostrando aviso de mantenimiento...");
+  document.body.innerHTML = `
+    <div style="
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      background:linear-gradient(to right,#00bcd4,#0097a7);
+      color:white;
+      font-family:'Poppins',sans-serif;
+      text-align:center;
+    ">
+      <h1>🚧 Página en mantenimiento 🚧</h1>
+      <p>Estamos trabajando para mejorar tu experiencia. Volvé pronto.</p>
+      <a href='index.html' style='
+        background:white;
+        color:#00bcd4;
+        padding:10px 25px;
+        border-radius:25px;
+        text-decoration:none;
+        font-weight:bold;
+        margin-top:20px;
+      '>Volver al inicio</a>
+    </div>
+  `;
+});
+
+  /* ==== ANIMACIÓN DE APARICIÓN SUAVE ==== */
+  const reveals = document.querySelectorAll("section");
+  function revealOnScroll() {
+    reveals.forEach(sec => {
+      const top = sec.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        sec.classList.add("visible");
+      }
+    });
+  }
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
+
+
+  // ==== FILTRO POR REGIÓN (NAV SUPERIOR) ====
+document.querySelectorAll('.region-nav li').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.region-nav li').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const region = btn.dataset.region;
+
+    document.querySelectorAll('.destino-avanzado').forEach(card => {
+      card.style.display = (region === 'all' || card.dataset.region === region) ? 'block' : 'none';
+    });
+
+    // Cambiar sidebar dinámicamente
+    const sidebar = document.getElementById('sidebar');
+    const lista = document.getElementById('lista-lugares');
+    if (region === 'europa') {
+      sidebar.querySelector('h3').textContent = 'Explorá Europa';
+      lista.innerHTML = `
+        <li><a href="#">París, Francia</a></li>
+        <li><a href="#">Roma, Italia</a></li>
+        <li><a href="#">Londres, Reino Unido</a></li>
+      `;
+    } else if (region === 'asia') {
+      sidebar.querySelector('h3').textContent = 'Explorá Asia';
+      lista.innerHTML = `
+        <li><a href="#">Maldivas</a></li>
+        <li><a href="#">Tokio, Japón</a></li>
+        <li><a href="#">Bangkok, Tailandia</a></li>
+      `;
+    } else if (region === 'america') {
+      sidebar.querySelector('h3').textContent = 'Explorá América';
+      lista.innerHTML = `
+        <li><a href="#">Nueva York, EE.UU.</a></li>
+        <li><a href="#">Buenos Aires, Argentina</a></li>
+        <li><a href="#">Río de Janeiro, Brasil</a></li>
+      `;
+    } else {
+      sidebar.querySelector('h3').textContent = 'Explorá el mundo';
+      lista.innerHTML = `
+        <li><a href="#">París</a></li>
+        <li><a href="#">Maldivas</a></li>
+        <li><a href="#">Nueva York</a></li>
+      `;
+    }
+  });
+});
+
+// ==== SLIDER DE PRECIO ====
+const slider = document.getElementById('filtro-precio');
+const valor = document.getElementById('valor-precio');
+if (slider && valor) {
+  slider.addEventListener('input', () => {
+    valor.textContent = `$${slider.value}`;
+  });
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | GoTravel</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- === NAVBAR === -->
+    <nav class="navbar">
+      <h1 class="logo">Go<span>Travel</span></h1>
+      <ul class="nav_links" id="nav_link">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html">Nosotros</a></li>
+        <li><a href="destinations.html">Destinos</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <!-- === HEADER PROPIO DE CONTACTO === -->
+    <header class="contact-header">
+      <div class="contact-hero">
+        <h1>¡Hablemos de tu próximo viaje!</h1>
+        <p>Completá el formulario o escribinos directamente, ¡nos encantaría ayudarte!</p>
+        <a href="#formulario" class="btn">Ir al formulario</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- === SECCIÓN 1: INFORMACIÓN === -->
+      <section class="servicios">
+        <h2>Información de contacto</h2>
+        <div class="servicios-grid">
+          <div class="servicio">
+            <i class="fa-solid fa-location-dot"></i>
+            <h3>Nuestra oficina</h3>
+            <p>Av. Libertador 1234, Buenos Aires, Argentina</p>
+          </div>
+          <div class="servicio">
+            <i class="fa-solid fa-clock"></i>
+            <h3>Horario de atención</h3>
+            <p>Lunes a Viernes: 9:00 a 18:00<br>Sábados: 9:00 a 13:00</p>
+          </div>
+          <div class="servicio">
+            <i class="fa-solid fa-phone"></i>
+            <h3>Teléfonos y redes</h3>
+            <p>📞 +54 11 5555-1234<br>✉️ info@gotravel.com<br>@GoTravelOficial</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- === SECCIÓN 2: FORMULARIO === -->
+      <section class="about" id="formulario">
+        <div class="about-content">
+          <div class="about-text">
+            <h2>Envíanos un mensaje</h2>
+            <p>Completá el formulario y nuestro equipo se pondrá en contacto con vos lo antes posible.</p>
+
+            <form class="form-contacto">
+              <div class="campo">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" required>
+              </div>
+              <div class="campo">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="campo">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn">Enviar mensaje</button>
+            </form>
+          </div>
+
+          <div class="about-img">
+            <img src="img/contact-office.jpg" alt="Oficina de atención GoTravel">
+          </div>
+        </div>
+      </section>
+
+      <!-- === SECCIÓN 3: MAPA === -->
+        <section class="mapa">
+            <h2>Encontranos fácilmente</h2>
+            <p>Visitanos en nuestra oficina central o contactanos para coordinar una reunión virtual.</p>
+            <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.479969254257!2d-58.38159368477026!3d-34.60373898045961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac7f2ffea3b%3A0x8f31b19a4b4d4ec3!2sObelisco%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1696695670101!5m2!1ses!2sar"
+            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </section>
+
+        <section class="faq">
+          <h2>Preguntas frecuentes</h2>
+          <div class="faq-item">
+            <h3>¿Cómo puedo reservar un viaje?</h3>
+            <p>Podés hacerlo desde la sección de destinos o escribiéndonos por el formulario de contacto.</p>
+          </div>
+          <div class="faq-item">
+            <h3>¿Cuáles son los medios de pago?</h3>
+            <p>Aceptamos tarjetas de crédito, débito y transferencias bancarias.</p>
+          </div>
+          <div class="faq-item">
+            <h3>¿Realizan viajes personalizados?</h3>
+            <p>¡Sí! Podés indicarnos tus preferencias y armamos el itinerario a medida.</p>
+          </div>
+        </section>
+
+
+      <!-- === SECCIÓN 3: MAPA O CTA === -->
+      <section class="cta">
+        <h2>¿Listo para tu próximo viaje?</h2>
+        <p>¡Escribinos y comenzá a planificar tu aventura hoy mismo!</p>
+        <a href="destinations.html" class="btn">Ver destinos</a>
+      </section>
+    </main>
+
+    <!-- === FOOTER === -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>© 2025 GoTravel - Todos los derechos reservados</p>
+        <div class="footer-redes">
+          <a href="#" class="social"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="social"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
