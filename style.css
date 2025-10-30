@@ -326,6 +326,16 @@ main {
     transform: translateY(-10px);
 }
 
+@media (max-width: 768px) {
+    .card-inicio img {
+        height: 350px;
+    }
+
+    .card-inicio p, h3 {
+        font-size: 1rem;
+    }
+}
+
 
 /* ===== SERVICIOS ===== */
 .servicios {
@@ -432,6 +442,14 @@ main {
     width: 100%;
     border-radius: 15px;
     max-width: 500px;
+}
+
+@media (max-width: 768px){
+    .about-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 }
 
 /* ===== VALORES ===== */
@@ -862,7 +880,7 @@ main {
 
 .campo label {
   font-weight: 600;
-  color: #008192;
+  color: #00e1ff;
   margin-bottom: 5px;
 }
 
@@ -881,6 +899,14 @@ main {
   outline: none;
   border-color: #0097a7;
   background-color: #e6f9fb;
+}
+
+.btn-contact {
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
 }
 
 /* ===== MAPA ===== */
@@ -1064,6 +1090,19 @@ section.visible {
   font-size: 0.9rem;
 }
 
+.contact-content {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7)), 
+              url('img/contact-content.jpg') center/cover no-repeat;
+}
+
+.contact-content p {
+    color: rgb(252, 252, 252);
+}
+
+.contact-content h2 {
+    color: #00bcd4;
+}
+
 /* Responsive */
 @media (max-width: 992px) {
   .destinos-layout {
@@ -1073,4 +1112,10 @@ section.visible {
     width: 100%;
     order: 2;
   }
+}
+
+@media (max-width: 768px){
+    .contact-hero{
+        width: 400px;
+    }
 }
